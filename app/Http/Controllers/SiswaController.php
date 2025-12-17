@@ -14,30 +14,27 @@ class SiswaController extends Controller
     }
 
     public function create()
-{
-    $kelas = \App\Models\Kelas::all();   //ambil semua kelas
-
-    return view('siswa.create', compact('kelas'));
-}
+    {
+        return view('siswa.create');
+    }
 
     public function store(Request $request)
     {
         $request->validate([
             'nisn' => 'required|unique:siswa',
             'nama' => 'required',
-            'kelas_id' => 'required',
+            'tingkat' => 'required|in:X,XI,XII',
             'jurusan' => 'required',
         ]);
 
         Siswa::create([
-        'nisn' => $request->nisn,
-        'nama' => $request->nama,
-        'kelas_id' => $request->kelas_id,
-        'jurusan' => $request->jurusan,
-        'telepon' => $request->telepon,
-        'alamat' => $request->alamat,
-    ]);
-
+            'nisn' => $request->nisn,
+            'nama' => $request->nama,
+            'tingkat' => $request->tingkat,
+            'jurusan' => $request->jurusan,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat,
+        ]);
 
         return redirect()->route('siswa.index')
             ->with('success', 'Data siswa berhasil ditambahkan');
@@ -54,7 +51,7 @@ class SiswaController extends Controller
         $request->validate([
             'nisn' => 'required|unique:siswa,nisn,' . $id,
             'nama' => 'required',
-            'kelas_id' => 'required',
+            'tingkat' => 'required|in:X,XI,XII',
             'jurusan' => 'required',
         ]);
 
@@ -62,12 +59,11 @@ class SiswaController extends Controller
         $siswa->update([
             'nisn' => $request->nisn,
             'nama' => $request->nama,
-            'kelas_id' => $request->kelas_id,
+            'tingkat' => $request->tingkat,
             'jurusan' => $request->jurusan,
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
-
 
         return redirect()->route('siswa.index')
             ->with('success', 'Data siswa berhasil diperbarui');

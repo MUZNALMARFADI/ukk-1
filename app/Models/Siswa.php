@@ -14,22 +14,15 @@ class Siswa extends Model
     protected $fillable = [
         'nisn',
         'nama',
-        'kelas_id',   // ← ini foreign key!
+        'tingkat',    // Pakai ini
         'jurusan',
         'alamat',
         'telepon',
         'user_id',
     ];
 
-
-    // relasi ke user
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-     // Tambahkan relasi ini
-    public function kelas()
-    {
-        return $this->belongsTo(Kelas::class, 'kelas_id');
     }
 }

@@ -13,7 +13,10 @@ class DashboardController extends Controller
         $totalSiswa = Siswa::count();
         $totalKelas = Kelas::count();
         $totalPembayaran = Pembayaran::sum('jumlah_bayar');
-        $pembayaranTerbaru = Pembayaran::latest()->take(5)->get();
+        $pembayaranTerbaru = Pembayaran::with('siswa.kelas')
+            ->latest()
+            ->take(5)
+            ->get();
 
         return view('dashboard', compact(
             'totalSiswa',
