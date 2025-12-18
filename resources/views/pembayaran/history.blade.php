@@ -20,7 +20,7 @@
                     @foreach ($history as $h)
                     <tr class="border">
                         <td class="p-2">{{ $h->siswa->nama }}</td>
-                        <td class="p-2">{{ $h->siswa->kelas->nama_kelas }}</td>
+                        <td class="p-2">{{ $h->siswa->nama_kelas }}</td>
                         <td class="p-2">Rp {{ number_format($h->jumlah_bayar) }}</td>
                         <td class="p-2">{{ $h->tgl_bayar }}</td>
                     </tr>

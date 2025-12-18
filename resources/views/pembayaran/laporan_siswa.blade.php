@@ -6,7 +6,7 @@
     <h2 class="text-xl font-bold mb-2">Laporan Pembayaran Siswa</h2>
 
     <p class="text-lg font-semibold">Nama: {{ $siswa->nama }}</p>
-    <p class="mb-4">Kelas: {{ $siswa->kelas->nama_kelas }}</p>
+    <p class="mb-4">Kelas: {{ $siswa->nama_kelas }}</p>
 
     <table class="min-w-full bg-white rounded-lg overflow-hidden">
         <thead class="bg-blue-600 text-white">

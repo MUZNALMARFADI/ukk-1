@@ -14,7 +14,7 @@ class Siswa extends Model
     protected $fillable = [
         'nisn',
         'nama',
-        'tingkat',    // Pakai ini
+        'tingkat',
         'jurusan',
         'alamat',
         'telepon',
@@ -24,5 +24,17 @@ class Siswa extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    // Tambahkan method untuk mendapatkan nama kelas lengkap
+    public function getNamaKelasAttribute()
+    {
+        return $this->tingkat . ' ' . $this->jurusan;
+    }
+
+    // Relasi ke pembayaran
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class);
     }
 }

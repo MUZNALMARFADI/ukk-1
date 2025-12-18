@@ -19,7 +19,7 @@
             @forelse ($laporan as $p)
             <tr>
                 <td class="px-4 py-2">{{ $p->siswa->nama }}</td>
-                <td class="px-4 py-2">{{ $p->siswa->kelas->nama_kelas }}</td>
+                <td class="px-4 py-2">{{ $p->siswa->nama_kelas }}</td>
                 <td class="px-4 py-2">Rp {{ number_format($p->jumlah_bayar) }}</td>
                 <td class="px-4 py-2">{{ $p->tgl_bayar }}</td>
             </tr>

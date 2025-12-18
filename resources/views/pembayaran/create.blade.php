@@ -20,7 +20,7 @@
                             <option value="">-- Pilih Siswa --</option>
                             @foreach ($siswa as $s)
                                 <option value="{{ $s->id }}">
-                                    {{ $s->nama }} ({{ $s->kelas->nama_kelas ?? '-' }})
+                                    {{ $s->nama }} ({{ $s->nama_kelas }})
                                 </option>
                             @endforeach
                         </select>
@@ -39,9 +39,7 @@
                         <input type="date" name="tgl_bayar" class="w-full border rounded-lg p-2">
                     </div>
 
-                    <!-- =========================== -->
-                    <!--       TOMBOL BAYAR           -->
-                    <!-- =========================== -->
+                    <!-- TOMBOL BAYAR -->
                     <div class="mt-4 text-center">
                         <button type="submit"
                                 class="bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition">

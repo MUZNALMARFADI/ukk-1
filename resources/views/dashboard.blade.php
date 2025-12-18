@@ -89,7 +89,7 @@
                         @foreach ($pembayaranTerbaru as $p)
                         <tr>
                             <td>{{ $p->siswa->nama }}</td>
-                            <td>{{ $p->siswa->kelas->nama_kelas ?? '-' }}</td>
+                            <td>{{ $p->siswa->nama_kelas }}</td>
                             <td>Rp {{ number_format($p->jumlah_bayar) }}</td>
                             <td>{{ $p->tgl_bayar }}</td>
                         </tr>

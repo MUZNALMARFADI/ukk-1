@@ -2,13 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SppController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\LaporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 /* ==========================
-    MENU ADMIN
+    MENU ADMIN ONLY
 ========================== */
 Route::middleware(['auth','role:admin'])->group(function () {
 
@@ -57,11 +57,12 @@ Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('pembayaran', [PembayaranController::class, 'index'])
         ->name('pembayaran.index');
 
-    // ======================
     // LAPORAN PEMBAYARAN
-    // ======================
     Route::get('laporan', [PembayaranController::class, 'laporan'])
         ->name('laporan.index');
+
+    Route::post('laporan/cari', [LaporanController::class, 'cari'])
+        ->name('laporan.cari');
 
     Route::get('laporan/cetak', [PembayaranController::class, 'cetak'])
         ->name('laporan.cetak');
@@ -74,17 +75,21 @@ Route::middleware(['auth','role:admin'])->group(function () {
 ========================== */
 Route::middleware(['auth','role:admin|petugas|siswa'])->group(function () {
 
-    // FORM BAYAR
+    // FORM BAYAR (semua role bisa akses)
     Route::get('pembayaran/create', [PembayaranController::class, 'create'])
         ->name('pembayaran.create');
 
-    // SIMPAN PEMBAYARAN
+    // SIMPAN PEMBAYARAN (semua role bisa bayar)
     Route::post('pembayaran', [PembayaranController::class, 'store'])
         ->name('pembayaran.store');
 
-    // HISTORY PEMBAYARAN
+    // HISTORY PEMBAYARAN (siswa lihat history sendiri)
     Route::get('history', [PembayaranController::class, 'history'])
         ->name('pembayaran.history');
 });
 
+// ============================================
+// ROUTE AUTH (Login, Register, Reset Password)
+// File ini sudah include semua route authentication
+// ============================================
 require __DIR__.'/auth.php';

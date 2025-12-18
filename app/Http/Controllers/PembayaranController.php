@@ -11,7 +11,7 @@ class PembayaranController extends Controller
 {
     public function index()
     {
-        $pembayaran = Pembayaran::with('siswa.kelas')
+        $pembayaran = Pembayaran::with('siswa')
             ->latest()
             ->paginate(10);
 
@@ -20,7 +20,7 @@ class PembayaranController extends Controller
 
     public function create()
     {
-        $siswa = Siswa::with('kelas')->get();
+        $siswa = Siswa::all();
         return view('pembayaran.create', compact('siswa'));
     }
 
@@ -49,23 +49,34 @@ class PembayaranController extends Controller
             'bulan_dibayar' => $bulan
         ]);
 
-        return redirect()->route('pembayaran.index')
+        return redirect()->route('pembayaran.history')
             ->with('success', 'Pembayaran berhasil ditambahkan! 💰');
     }
 
     public function history()
     {
-        $history = Pembayaran::where('siswa_id', auth()->user()->siswa_id ?? 0)
-            ->with('siswa.kelas')
-            ->latest()
-            ->get();
+        // Cari siswa berdasarkan user_id yang login
+        $siswa = Siswa::where('user_id', auth()->id())->first();
+
+        if ($siswa) {
+            // Jika user adalah siswa, tampilkan history pembayaran siswa tersebut
+            $history = Pembayaran::where('siswa_id', $siswa->id)
+                ->with('siswa')
+                ->latest()
+                ->get();
+        } else {
+            // Jika bukan siswa (admin/petugas), tampilkan semua
+            $history = Pembayaran::with('siswa')
+                ->latest()
+                ->get();
+        }
 
         return view('pembayaran.history', compact('history'));
     }
 
     public function laporan()
     {
-        $laporan = Pembayaran::with('siswa.kelas')
+        $laporan = Pembayaran::with('siswa')
             ->orderBy('tgl_bayar', 'DESC')
             ->get();
 
@@ -77,7 +88,7 @@ class PembayaranController extends Controller
         $siswa = Siswa::findOrFail($id);
 
         $riwayat = Pembayaran::where('siswa_id', $id)
-            ->with('siswa.kelas')
+            ->with('siswa')
             ->orderBy('tgl_bayar', 'DESC')
             ->get();
 

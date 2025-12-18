@@ -25,7 +25,7 @@
                     @forelse($pembayaran as $p)
                     <tr>
                         <td class="p-2 border">{{ $p->siswa->nama }}</td>
-                        <td class="p-2 border">{{ $p->siswa->kelas->nama_kelas }}</td>
+                        <td class="p-2 border">{{ $p->siswa->nama_kelas }}</td>
                         <td class="p-2 border">Rp {{ number_format($p->jumlah_bayar) }}</td>
                         <td class="p-2 border">{{ $p->tgl_bayar }}</td>
                     </tr>
