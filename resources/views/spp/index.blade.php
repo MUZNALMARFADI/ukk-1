@@ -4,24 +4,24 @@
 
 <style>
     .page-header {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
         border-radius: 24px;
         padding: 32px;
         color: white;
         margin-bottom: 32px;
-        box-shadow: 0 10px 40px rgba(79, 172, 254, 0.3);
+        box-shadow: 0 10px 40px rgba(20, 184, 166, 0.2);
     }
 
     .data-card {
         background: white;
         border-radius: 20px;
         padding: 32px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+        border: 1px solid #d1fae5;
     }
 
     .btn-add {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
         color: white;
         padding: 12px 24px;
         border-radius: 12px;
@@ -30,13 +30,13 @@
         align-items: center;
         gap: 8px;
         transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
         text-decoration: none;
     }
 
     .btn-add:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+        box-shadow: 0 6px 20px rgba(20, 184, 166, 0.4);
         color: white;
     }
 
@@ -47,7 +47,7 @@
     }
 
     thead {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
     }
 
     thead th {
@@ -70,7 +70,7 @@
 
     tbody td {
         padding: 18px 20px;
-        border-bottom: 1px solid #f3f4f6;
+        border-bottom: 1px solid #f0fdf4;
         color: #374151;
         font-size: 14px;
     }
@@ -80,7 +80,7 @@
     }
 
     tbody tr:hover {
-        background: #ecfeff;
+        background: #f0fdfa;
     }
 
     .btn-action {
@@ -143,7 +143,7 @@
     <div class="flex justify-between items-center">
         <div>
             <h1 class="text-3xl font-bold mb-2">💰 Data SPP</h1>
-            <p class="text-cyan-100">Kelola tarif pembayaran SPP</p>
+            <p class="text-teal-100">Kelola tarif pembayaran SPP</p>
         </div>
         <a href="{{ route('spp.create') }}" class="btn-add">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

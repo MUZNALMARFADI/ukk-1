@@ -15,15 +15,15 @@
             background: white;
             border-radius: 24px;
             padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+            border: 1px solid #d1fae5;
         }
 
         .payment-header {
             text-align: center;
             margin-bottom: 32px;
             padding-bottom: 24px;
-            border-bottom: 2px solid #f3f4f6;
+            border-bottom: 2px solid #f0fdf4;
         }
 
         .payment-icon {
@@ -58,7 +58,7 @@
         .input-box, .select-box {
             width: 100%;
             padding: 14px 16px;
-            border: 2px solid #e5e7eb;
+            border: 2px solid #d1fae5;
             border-radius: 12px;
             font-size: 15px;
             transition: all 0.3s;
@@ -82,7 +82,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -92,7 +92,7 @@
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
     </style>
 
@@ -137,18 +137,20 @@
                     <div class="input-group">
                         <label class="input-label">Tanggal Bayar</label>
                         <input type="date" name="tgl_bayar" class="input-box"
-                        value="{{ date('Y-m-d') }}" required>
-                </div>
+                               value="{{ date('Y-m-d') }}" required>
+                    </div>
 
-                <!-- TOMBOL BAYAR -->
-                <button type="submit" class="btn-submit">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                    </svg>
-                    PROSES PEMBAYARAN
-                </button>
-            </form>
+                    <!-- TOMBOL BAYAR -->
+                    <button type="submit" class="btn-submit">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        PROSES PEMBAYARAN
+                    </button>
+
+                </form>
+
+            </div>
         </div>
     </div>
-</div>
 </x-app-layout>

@@ -10,8 +10,8 @@
             background: white;
             border-radius: 20px;
             padding: 32px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+            border: 1px solid #d1fae5;
         }
 
         .history-title {
@@ -31,7 +31,7 @@
         }
 
         thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         }
 
         thead th {
@@ -54,7 +54,7 @@
 
         tbody td {
             padding: 16px 20px;
-            border-bottom: 1px solid #f3f4f6;
+            border-bottom: 1px solid #f0fdf4;
             color: #374151;
             font-size: 14px;
         }
@@ -64,7 +64,7 @@
         }
 
         tbody tr:hover {
-            background: #f9fafb;
+            background: #f0fdf4;
         }
 
         .empty-state {
@@ -85,7 +85,7 @@
 
             <div class="history-card">
                 <div class="history-title">
-                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                     Riwayat Pembayaran SPP

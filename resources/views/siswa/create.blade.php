@@ -12,8 +12,8 @@
         background: white;
         border-radius: 24px;
         padding: 40px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+        border: 1px solid #d1fae5;
     }
 
     .form-header {
@@ -22,13 +22,13 @@
         gap: 12px;
         margin-bottom: 32px;
         padding-bottom: 20px;
-        border-bottom: 2px solid #f3f4f6;
+        border-bottom: 2px solid #f0fdf4;
     }
 
     .form-icon {
         width: 48px;
         height: 48px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -61,7 +61,7 @@
     .input-box, .select-box {
         width: 100%;
         padding: 14px 16px;
-        border: 2px solid #e5e7eb;
+        border: 2px solid #d1fae5;
         border-radius: 12px;
         font-size: 15px;
         transition: all 0.3s;
@@ -70,14 +70,14 @@
 
     .input-box:focus, .select-box:focus {
         outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        border-color: #10b981;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
     }
 
     .textarea-box {
         width: 100%;
         padding: 14px 16px;
-        border: 2px solid #e5e7eb;
+        border: 2px solid #d1fae5;
         border-radius: 12px;
         font-size: 15px;
         transition: all 0.3s;
@@ -88,8 +88,8 @@
 
     .textarea-box:focus {
         outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        border-color: #10b981;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
     }
 
     .grid-2 {
@@ -113,7 +113,7 @@
     .btn-primary {
         flex: 1;
         padding: 14px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: white;
         border: none;
         border-radius: 12px;
@@ -121,7 +121,7 @@
         font-weight: 700;
         cursor: pointer;
         transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -130,7 +130,7 @@
 
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
     }
 
     .btn-secondary {

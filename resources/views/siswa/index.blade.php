@@ -4,24 +4,24 @@
 
 <style>
     .page-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         border-radius: 24px;
         padding: 32px;
         color: white;
         margin-bottom: 32px;
-        box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 10px 40px rgba(16, 185, 129, 0.2);
     }
 
     .data-card {
         background: white;
         border-radius: 20px;
         padding: 32px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+        border: 1px solid #d1fae5;
     }
 
     .btn-add {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: white;
         padding: 12px 24px;
         border-radius: 12px;
@@ -30,13 +30,13 @@
         align-items: center;
         gap: 8px;
         transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         text-decoration: none;
     }
 
     .btn-add:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         color: white;
     }
 
@@ -48,7 +48,7 @@
     .search-input {
         width: 100%;
         padding: 12px 16px 12px 44px;
-        border: 2px solid #e5e7eb;
+        border: 2px solid #d1fae5;
         border-radius: 12px;
         font-size: 14px;
         transition: all 0.3s;
@@ -56,8 +56,8 @@
 
     .search-input:focus {
         outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        border-color: #10b981;
+        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
     }
 
     .search-icon {
@@ -75,7 +75,7 @@
     }
 
     thead {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     }
 
     thead th {
@@ -98,7 +98,7 @@
 
     tbody td {
         padding: 18px 20px;
-        border-bottom: 1px solid #f3f4f6;
+        border-bottom: 1px solid #f0fdf4;
         color: #374151;
         font-size: 14px;
     }
@@ -108,7 +108,7 @@
     }
 
     tbody tr:hover {
-        background: #f9fafb;
+        background: #f0fdf4;
     }
 
     .badge-kelas {
@@ -117,7 +117,7 @@
         border-radius: 20px;
         font-size: 12px;
         font-weight: 700;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: white;
     }
 
@@ -201,7 +201,7 @@
     <div class="flex justify-between items-center">
         <div>
             <h1 class="text-3xl font-bold mb-2">📚 Data Siswa</h1>
-            <p class="text-purple-100">Kelola semua data siswa dengan mudah</p>
+            <p class="text-emerald-100">Kelola semua data siswa dengan mudah</p>
         </div>
         <a href="{{ route('siswa.create') }}" class="btn-add">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
